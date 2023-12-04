@@ -99,7 +99,7 @@ H(LLVM-IR):::blue --> |*.ll| I("
 	Optimization
 ");
 
-subgraph Darkmatter Back-end;
+subgraph Darkmatter Compiler Back-end;
 I --> J("
 	LLVM-AS
 	linker/assembler
@@ -128,7 +128,7 @@ A(Source Code):::cyan --> |*.dm| B("
 	lexical analysis
 "):::yellow;
 
-subgraph Darkmatter Front-end;
+subgraph Darkmatter Compiler Front-end;
 	B --> |Tokens| C("
 		Parser
 		syntactic analysis
