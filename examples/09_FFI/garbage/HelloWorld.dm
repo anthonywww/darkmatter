@@ -3,13 +3,13 @@ namespace examples {
 
 	public class HelloWorld {
 
-		public static int main(string[] args) {
+		public static int32 main(string[] args) {
 		
 			// Defines a string
 			string x = "hello universe";
 			
 			// print to console
-			console.writeln(x);
+			Console.writeln(x);
 			
 			// return success
 			return 0;

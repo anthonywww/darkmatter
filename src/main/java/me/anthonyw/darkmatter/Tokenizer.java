@@ -1,8 +1,33 @@
 package me.anthonyw.darkmatter;
 
 public class Tokenizer {
+
+	private String input;
+	private int cursor;
+	private int line; // increment each time we encounter \n
+	private int column; // reset to 0 each time we encounter \n
 	
+	public Tokenizer(String input) {
+		this.input = input;
+	}
 	
+	private boolean hasMoreTokens() {
+		return cursor < input.length();
+	}
+
+	public Token getNextToken() {
+		if (!hasMoreTokens()) {
+			return null;
+		}
+
+		final String segment = input.substring(cursor);
+
+		// state machine
+
+
+
+		return null;
+	}
 	
 	
 	/**
@@ -12,7 +37,7 @@ public class Tokenizer {
 	 * @param type
 	 * @return
 	 */
-	public int binaryPrecedence(TokenType type) {
+	public static int binaryPrecedence(TokenType type) {
 		
 		switch (type) {
 		case PLUS:

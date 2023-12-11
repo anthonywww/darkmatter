@@ -1,26 +1,26 @@
 
+function fileExists(file)
+	local f = io.open(file, "rb")
+	if f then f:close() end
+	return f ~= nil
+end
 
+function readFile(file)
+	if not fileExists(file) then return {} end
+	local bytes = ""
+	local f = io.open(file, "rb")
+	bytes = f:read("*all")
+	f:close()
+	return bytes
+end
 
--- Pretty console print handler
-function log(logLevel, text)
-	if (type(logLevel) ~= "number") then
-		error ("Illegal log level type provided, this must be a number")
+function readLines(file)
+	if not fileExists(file) then return {} end
+	local lines = {}
+	for line in io.lines(file) do 
+		table.insert(lines, line)
 	end
-	if logLevel < 0 or logLevel > 3 then
-		error ("Illegal log level provided, use 'info' for informational messages")
-		return
-	end
-	local logLevelName = ""
-	if logLevel == 0 then
-		logLevelName = "DEBUG"
-	elseif logLevel == 1 then
-		logLevelName = "INFO"
-	elseif logLevel == 2 then
-		logLevelName = "WARN"
-	elseif logLevel == 3 then
-		logLevelName = "ERROR"
-	end
-	print(os.date("[%H:%M:%S] [" .. logLevelName .. "] " .. text))
+	return lines
 end
 
 function string.startsWith(str, start)
@@ -35,15 +35,11 @@ function string.trim(str)
 	return (str:gsub("^%s*(.-)%s*$", "%1"))
 end
 
-function table.implode(list, separator)
-	return table.concat(list, separator)
-end
-
-function string.explode(str, separator)
+function string.split(str, separator)
 	assert(type(str) == "string" and type(separator) == "string", "invalid arguments")
 	local o = {}
 	while true do
-		local pos1,pos2 = str:find(separator)
+		local pos1, pos2 = str:find(separator)
 		if (not pos1) then
 			o[#o+1] = str
 			break
@@ -52,4 +48,3 @@ function string.explode(str, separator)
 	end
 	return o
 end
-

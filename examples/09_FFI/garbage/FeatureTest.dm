@@ -1,20 +1,3 @@
-#!/bin/acc -i
-
-// a shebang may be specified at the very beginning of the file if so desired.
-
-// this file may have multiple "modules" or namespaces.
-
-// this will make it so you don't have to type
-// #[system.macro.Generate(system.macro.Generate.get, system.macro.Generate.set)]
-import system.macro.Generate;
-// or
-//import system.macro.*;
-
-
-/*
-system.process.exit(0);
-system.process.
-*/
 
 namespace example {
 

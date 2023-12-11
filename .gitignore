@@ -58,7 +58,6 @@ hs_err_pid*
 replay_pid*
 
 ### Maven/Gradle
-target/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
@@ -76,4 +75,6 @@ Thumbs.db
 output/
 *.bin
 *.o
-/bin/
+bin/
+target/
+src/main/rust/*/target/

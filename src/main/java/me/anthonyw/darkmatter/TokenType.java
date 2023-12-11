@@ -98,9 +98,11 @@ public enum TokenType {
 	/**
 	 * A compile-time assigned data-type variable (constant/immutable).
 	 */
-	VAR("var"),
+	LET("let"),
 	
 	FUNCTION("function"),
+
+	IF("if"),
 	
 	FOR("for"),
 	
@@ -153,10 +155,12 @@ public enum TokenType {
 	INTERFACE("interface"),
 	
 	ABSTRACT("abstract"),
-	
+
+	GET("get"),
+
+	SET("set"),
+
 	STATEMENT,
-	
-	IF("if"),
 	
 	SCOPE;
 	

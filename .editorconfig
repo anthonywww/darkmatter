@@ -20,6 +20,6 @@ indent_size = 4
 [Makefile]
 indent_style = tab
 
-[*.{java,lua,json,js,sh,dm,ll}]
+[*.{java,lua,json,js,sh,dm,ll,asm}]
 indent_style = tab
 indent_size = 4
