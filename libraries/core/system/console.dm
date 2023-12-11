@@ -1,5 +1,5 @@
 
-public class Console inherits IOSerial {
+public class Console inherits SerialIO {
 
 
 	#[override]

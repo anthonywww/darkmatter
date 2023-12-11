@@ -1,5 +1,5 @@
 
-public abstract class IOSerial {
+public abstract class SerialIO {
 
 	public abstract void write(byte b);
 
