@@ -1,9 +1,12 @@
 
 public class Console inherits SerialIO {
 
+	// Prevent external instantiation
+	private Console() {
 
-	#[override]
-	public void write(byte b) {
+	}
+
+	public static void write(byte b) {
 
 	}
 
@@ -22,12 +25,33 @@ public class Console inherits SerialIO {
 
 	}
 
+	#[override]
+	public void read(&byte[] buffer) {
+		
+	}
+
+	#[override]
+	public string readLine() {
+		// Read console line
+		StringBuilder sb = new StringBuilder();
+		
+		while ((byte[] buffer = read(buffer.length)) != null) {
+			sb.append(buffer);
+		}
+
+		return sb.toString();
+	}
+
 	public void writeLine(Object object) {
 		byte[] original = object.toString().getBytes();
 		byte[] bytes = new byte[original.length + 1];
 		Array.fill(bytes, original);
 		bytes[original.length] = '\n';
 		self.write(bytes);
+	}
+
+	static {
+
 	}
 
 }

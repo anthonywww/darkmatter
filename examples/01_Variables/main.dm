@@ -1,24 +1,49 @@
 
 void main() {
 	
-	// There are a few data-types in Darkmatter.
+	//
+	// Scalar primitive data-types:
+	//
+	// - Signed Integers:
+	//   int8, int16, int32, int64, int128
+	//
+	// - Unsigned Integers:
+	//   uint8, uint16, uint32, uint64, uint128
+	//
+	// - Floats:
+	//   float32, float64
+	//
+	// - Others:
+	//   byte, char, string
+	//
+	//
+	// Compount primitive data-types:
+	//
+	// - struct, class, json
+	//
 
-	// Integers:
-	// int8, int16, int32, int64, int128, and unsigned types, uint8, etc.
 
-	// Floats:
-	// float32, float64
+	// Reference data-types used in Darkmatter:
+	//
+	// - Sets:
+	//   Set, HashSet
+	//
+	// - Maps:
+	//   Map, HashMap, LinkedMap, LinkedHashMap
+	//
 
-	// Bytes, Chars, Strings:
-	// byte, char, string
 
-	// If you don't know or don't care, just use `let`!
+	// Variables:
 
+	//
+	// Similarly to Rust's `let` and Java's `var` keyword, Darkmatter has `let` as well.
+	//
 	// Darkmatter will try to be as conservative with memory as possible.
-
-	// So for implicit values using `let` ...
-	// -128 <= 0 <= 127 will implicitly be a `int8`
-	// 0 <= 255 will implicitly be a `uint8`
+	// For instance:
+	//
+	// -128 <= 0 <= 127 will implicitly become an `int8`
+	// 0 <= 255 will implicitly become a `uint8`
+	//
 
 	let message = "All variables in Darkmatter are immutable by default!";
 	let x = 4;

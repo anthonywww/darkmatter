@@ -1,7 +1,11 @@
 package me.anthonyw.darkmatter;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.concurrent.Callable;
 
 import org.fusesource.jansi.AnsiConsole;
@@ -68,6 +72,10 @@ public class Main implements Callable<Integer> {
 	public Integer call() throws Exception {
 
 		logger.info("{} v{}", Darkmatter.NAME, Darkmatter.VERSION);
+		
+		final File file = new File("./examples/00_Intro/main.dm");
+		InputStream input = new FileInputStream(file);
+		Tokenizer tokenizer = new Tokenizer(new String(input.readAllBytes(), StandardCharsets.UTF_8));
 		
 		
 		// TODO: check compiler flags

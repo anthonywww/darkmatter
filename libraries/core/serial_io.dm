@@ -9,4 +9,6 @@ public abstract class SerialIO {
 
 	public abstract byte read();
 
+	public abstract void read(&byte[] bytes);
+
 }

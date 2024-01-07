@@ -27,7 +27,7 @@ void main() {
 	carmelHigh.testStudents();
 
 	// Print grades
-	Console.writeLine("${montereyHigh.getName()} Scores:")
+	Console.writeLine("${montereyHigh.getName()} Scores:");
 	montereyHigh.printScores();
 	Console.writeLine("Average: ${montereyHigh.getAverageScores()}.2f%");
 
